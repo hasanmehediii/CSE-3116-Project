@@ -1,0 +1,13 @@
+int buttonPin = 2;  // GPIO2 on ESP32
+
+void setup() {
+  pinMode(buttonPin, INPUT); 
+  Serial.begin(115200);
+}
+
+void loop() {
+  int state = digitalRead(buttonPin);
+  Serial.println(state);  // 0 = not pressed, 1 = pressed
+  delay(200);
+}
+
