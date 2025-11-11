@@ -1,0 +1,51 @@
+Lab 3: ADC/DAC and Sensor Interfacing
+
+Objectives
+
+Learn how analog values are converted to digital.
+Read real-world sensor data via ADC.
+Process analog signals (simple filtering).
+Output analog-equivalent signals using DAC/PWM.
+
+Required Equipment
+Microcontroller board with ADC (Arduino Uno, STM32, PIC)
+Potentiometer, temperature sensor (LM35 or TMP36)
+LED for PWM brightness test
+Oscilloscope (if available)
+
+Pre-lab Preparation
+Read datasheet section on ADC resolution and sampling rate.
+Revise voltage dividers.
+Review PWM concept for simulating analog output.
+
+
+Lab Activities
+
+Part A: Read Analog Signal (45 min)
+Connect potentiometer to ADC pin.
+Display value on Serial Plotter.
+int potPin = A0;
+void loop() {
+  int val = analogRead(potPin);
+  Serial.println(val);
+  delay(100);
+}
+
+
+Part B: Sensor Interfacing (45 min)
+Connect temperature sensor.
+Convert ADC reading to Celsius.
+Print to Serial Monitor.
+
+Part C: Filtering (30 min)
+Apply moving average to smooth noisy sensor values.
+
+Part D: DAC/PWM Output (1 hr)
+Use PWM pin to fade LED brightness based on potentiometer input.
+Generate a triangle/sine wave via DAC on STM32 and observe with oscilloscope.
+
+Assessment Questions
+What factors determine ADC resolution?
+Why do we use PWM to simulate analog output?
+How would you reduce noise in sensor readings?
+Extend: Control motor speed with potentiometer via PWM.

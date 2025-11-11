@@ -1,0 +1,86 @@
+Lab 2: Timers, Interrupts & Event Handling
+
+Objectives
+
+Part A:
+
+In the first part of this lab, students will be able to:
+Attach an LCD module (1602A) with ESP32 and use it for debug or display purposes.
+Part B:
+
+By the end of this lab, students will be able to:
+Understand timers and how they differ from software delays.
+Configure hardware timers to generate periodic events.
+Implement interrupt service routines (ISRs).
+Compare polling vs. interrupt-based designs.
+Run multiple tasks concurrently on a microcontroller.
+
+Required Equipment
+Microcontroller board (Arduino Uno / STM32 / PIC)
+USB cable
+Breadboard, jumper wires
+LED, buzzer, resistors
+
+Pre-lab Preparation
+Read about polling vs. interrupts.
+Review the concept of ISRs (Interrupt Service Routines).
+Skim datasheet section on timers for your MCU.
+
+
+Lab Activities
+
+Part A: Software Delay vs Timer (30 min)
+Write LED blink program using delay().
+Rewrite using a timer interrupt to blink LED at 1 Hz.
+// Example: Arduino using Timer1 library
+#include <TimerOne.h>
+
+void setup() {
+  pinMode(13, OUTPUT);
+  Timer1.initialize(1000000);     // 1 second
+  Timer1.attachInterrupt(toggleLED);
+}
+
+void toggleLED() {
+  digitalWrite(13, !digitalRead(13));
+}
+
+void loop() {
+  // main loop free for other tasks
+}
+
+
+
+Part B: External Interrupts (45 min)
+Configure a push button on pin 2 to trigger an ISR.
+ISR toggles LED immediately when button pressed.
+void setup() {
+  pinMode(2, INPUT_PULLUP);
+  pinMode(13, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(2), toggle, FALLING);
+}
+void toggle() {
+  digitalWrite(13, !digitalRead(13));
+}
+void loop() {}
+
+
+Part C: Multi-tasking (1 hr)
+LED blinks at 1 Hz (via timer).
+Button press triggers buzzer (via external interrupt).
+Show students how MCU handles both tasks concurrently.
+
+Part D: Debugging (30 min)
+Insert Serial.print inside ISR — observe why this is a bad idea.
+Discuss ISR design best practices.
+
+Assessment Questions
+Why are interrupts preferred over polling?
+What is the risk of writing long code inside an ISR?
+How would you handle two interrupts arriving at the same time?
+Extend: Program two LEDs blinking at different rates using two timers.
+
+
+References:
+https://www.circuitschools.com/interfacing-16x2-lcd-module-with-esp32-with-and-without-i2c/
+https://www.instructables.com/ESP32-How-to-Interface-LCD-With-ESP32-Microcontrol/
