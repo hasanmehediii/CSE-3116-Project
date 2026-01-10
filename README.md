@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Demo](Demo.gif)
+![Demo](firefighter.gif)
 
 **An autonomous fire-fighting robot car built with ESP32, featuring automatic flame detection, tracking, and extinguishing capabilities with manual override control via WiFi.**
 
