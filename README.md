@@ -1,35 +1,22 @@
 # 🚒 FireFighter Robot Car
 
+<p align="center">
+  <img src="logo.png" alt="LangMastero Logo" width="180" height="170"/>
+  <br>
+</p>
+
+**An autonomous fire-fighting robot car built with ESP32, featuring automatic flame detection, tracking, and extinguishing capabilities with manual override control via WiFi. This smart robot car mainly automatically finds and fights fires using flame sensors and a water pump system until it doesn't detect any fire around it.**
+
+
 <div align="center">
 
 ![Demo](firefighter.gif)
 
-**An autonomous fire-fighting robot car built with ESP32, featuring automatic flame detection, tracking, and extinguishing capabilities with manual override control via WiFi.**
-
-[![ESP32](https://img.shields.io/badge/ESP32-Microcontroller-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
-[![Arduino](https://img.shields.io/badge/Arduino-IDE-00979D.svg)](https://www.arduino.cc/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Components Required](#-components-required)
-- [Circuit Connections](#-circuit-connections)
-- [Pin Configuration](#-pin-configuration)
-- [How It Works](#-how-it-works)
-- [Installation & Setup](#-installation--setup)
-- [Usage](#-usage)
-- [Code Structure](#-code-structure)
-- [Troubleshooting](#-troubleshooting)
-- [Future Improvements](#-future-improvements)
-- [License](#-license)
-
----
 
 ## 🔥 Overview
 
@@ -58,7 +45,7 @@ This project is an ESP32-based autonomous firefighter robot car that can detect,
 |-----------|----------|-------------|
 | **ESP32 Development Board** | 1 | Main microcontroller |
 | **L298N Motor Driver** | 1 | Dual H-Bridge for motor control |
-| **DC Motors (with wheels)** | 2 | For robot movement |
+| **DC Motors (with wheels)** | 4 | For robot movement |
 | **Flame Sensors** | 3 | KY-026 or similar IR flame sensors |
 | **SG90 Servo Motor** | 1 | For water nozzle direction control |
 | **Mini Water Pump** | 1 | 3-6V DC submersible pump |
@@ -68,7 +55,6 @@ This project is an ESP32-based autonomous firefighter robot car that can detect,
 | **18650 Batteries** | 2-3 | Power supply (7.4V or 11.1V) |
 | **Battery Holder** | 1 | For batteries |
 | **Jumper Wires** | - | Male-to-male and male-to-female |
-| **Chassis** | 1 | Robot car base with wheels |
 
 ### Optional
 - Small water container/tank
@@ -167,6 +153,13 @@ Water Pump:
 ```
 
 ---
+
+## 📸 Gallery
+
+![image](firefighter-car.png)
+
+---
+
 
 ## ⚙️ How It Works
 
@@ -327,26 +320,10 @@ This project is open-source and available under the MIT License.
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
----
-
 ## 👨‍💻 Author
 
-Created with ❤️ for making fire safety smarter
-
----
-
-## 📸 Gallery
-
-Add more images/videos of your project here:
-- Assembly process
-- Circuit diagrams
-- Testing photos
-- Different angles of the robot
-
+- Mehedi Hasan
+- Farhana Alam
 ---
 
 <div align="center">
